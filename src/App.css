@@ -36,3 +36,50 @@
     background-color: darkgreen;
     color: wheat;
 }
+
+.task-show-div {
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.task-list-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sil-but{
+    padding: 5px;
+    width: 80px;
+    color: wheat;
+    background-color: blue;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.sil-but:hover {
+    background-color: rgb(92, 92, 236);
+}
+
+.gun-but {
+    padding: 5px;
+    width: 120px;
+    color: wheat;
+    background-color: rgb(103, 4, 4);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.gun-but:hover {
+    background-color: brown;
+}
+
+.task-title {
+    margin-bottom: 5px;
+}
