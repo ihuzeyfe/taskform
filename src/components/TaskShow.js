@@ -1,23 +1,42 @@
-function TaskShow({ task, onDelete }) {
+import { useState } from "react";
+import TaskCreate from "./TaskCreate";
 
-    const handleDeleteClick = ( )=> {
-        onDelete(task.id);
-    }
+function TaskShow({ task, onDelete, onUpdate }) {
+  const [showEdit, setShowEdit] = useState(false);
+
+  const handleDeleteClick = () => {
+    onDelete(task.id);
+  };
+  const handleEditClick = () => {
+    setShowEdit(!showEdit);
+  };
+  const handleSubmit = (id, updatedTitle, updatedTaskDesc) => {
+    setShowEdit(false);
+    onUpdate (id, updatedTitle, updatedTaskDesc);
+  };
 
   console.log(task);
   return (
     <div className="task-show-div">
-      <h3 className="task-title">Göreviniz.</h3>
-      <p>{task.title}</p>
-      <h3 className="task-title">Yapılacaklar.</h3>
-      <p>{task.taskDesc}</p>
-
-      <div>
-        <button className="sil-but" onClick={handleDeleteClick}>
-          Sil
-        </button>
-        <button className="gun-but">Güncelle</button>
-      </div>
+      {showEdit ? (
+        <TaskCreate task={task} taskformUpdate={true} onUpdate={handleSubmit}/>
+      ) : (
+        <div>
+          {" "}
+          <h3 className="task-title">Göreviniz.</h3>
+          <p>{task.title}</p>
+          <h3 className="task-title">Yapılacaklar.</h3>
+          <p>{task.taskDesc}</p>
+          <div>
+            <button className="sil-but" onClick={handleDeleteClick}>
+              Sil
+            </button>
+            <button className="gun-but" onClick={handleEditClick}>
+              Güncelle
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

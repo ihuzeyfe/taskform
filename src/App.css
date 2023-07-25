@@ -83,3 +83,21 @@
 .task-title {
     margin-bottom: 5px;
 }
+
+.gun-div {
+    width: 250px;
+}
+
+.gun-but-div{
+    margin: 10px 0px;
+    background-color: rgb(235, 36, 205);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.gun-but-div:hover {
+    background-color: rgb(206, 27, 225);
+    color: azure;
+}
